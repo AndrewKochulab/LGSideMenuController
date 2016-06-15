@@ -633,7 +633,7 @@
             if ([UIScreen mainScreen].scale == 1.f)
                 rootViewViewFrame = CGRectIntegral(rootViewViewFrame);
         }
-        else if (self.isRightViewShowing && _rightViewPresentationStyle != LGSideMenuPresentationStyleSlideAbove)
+        else if (self.isRightViewShowing)
         {
             CGFloat rootViewScale = 1.f+(_rootViewScaleForRightView-1.f)*percentage;
 
@@ -1228,21 +1228,6 @@
         _rightViewCoverView = [UIView new];
         _rightViewCoverView.hidden = YES;
         [self.view insertSubview:_rightViewCoverView aboveSubview:_rightView];
-    }
-    else
-    {
-        _rightViewStyleView = [UIView new];
-        _rightViewStyleView.hidden = YES;
-        _rightViewStyleView.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.9];
-        _rightViewStyleView.layer.masksToBounds = NO;
-        _rightViewStyleView.layer.borderWidth = 2.f;
-        _rightViewStyleView.layer.borderColor = [UIColor colorWithRed:0.f green:0.5 blue:1.f alpha:1.f].CGColor;
-        _rightViewStyleView.layer.shadowColor = [UIColor colorWithWhite:0.f alpha:0.5].CGColor;
-        _rightViewStyleView.layer.shadowOffset = CGSizeZero;
-        _rightViewStyleView.layer.shadowOpacity = 1.f;
-        _rightViewStyleView.layer.shadowRadius = 5.f;
-        _rightViewStyleView.layer.shouldRasterize = YES;
-        [self.view insertSubview:_rightViewStyleView belowSubview:_rightView];
     }
 
     // -----
