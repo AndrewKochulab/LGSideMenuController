@@ -297,7 +297,7 @@
     _panGesture.minimumNumberOfTouches = 1;
     _panGesture.maximumNumberOfTouches = 1;
     _panGesture.cancelsTouchesInView = YES;
-    [self.view addGestureRecognizer:_panGesture];
+    // [self.view addGestureRecognizer:_panGesture];
 }
 
 #pragma mark - Dealloc
